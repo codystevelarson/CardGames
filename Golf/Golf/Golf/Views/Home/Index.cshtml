@@ -1,0 +1,42 @@
+﻿@model GolfModels.Deck
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Symbol</th>
+                <th>Value</th>
+                <th>Suit</th>
+                <th>Card Type</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var card in Model.Cards)
+            {
+                <tr>
+                    <td>@card.Id</td>
+                    <td>@card.Symbol</td>
+                    <td>@card.Value</td>
+                    <td>@card.Suit</td>
+                    <td>@card.CardType</td>
+                    <td>@card.FullName</td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+</div>
+
+<script>
+    document.ready(function () {
+        var deck = @Model.Cards;
+        alert(deck.length)
+    })
+
+</script>
